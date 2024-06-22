@@ -513,3 +513,9 @@ h2 {
     height: 290px;
   }
 }
+@media only screen and (max-device-width: 414px) {
+  body {
+    height: var(--heightBody2);
+    background-image: url(./assets/images/obshi.jpeg);
+  }
+}
