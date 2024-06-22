@@ -1,0 +1,515 @@
+@font-face {
+  font-family: "Garet";
+  src: url(../assets/fonts/Garet-Book.otf);
+}
+
+@font-face {
+  font-family: "LuxuriousScript";
+  src: url(../assets/fonts/LuxuriousScript-Regular.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --transformCardFront: none;
+  --displayImg: flex;
+  --heightCardFront: 400px;
+  --heightCardFront2: 232px;
+  --boxShadow: none;
+  --buttonMarginTop: 50px;
+  --displayCountdown: none;
+  --heightBody: 100vh;
+  --heightBody2: 100vh;
+}
+
+.clicked {
+  --transformCardFront: rotateX(160deg);
+  --displayImg: none;
+  --heightCardFront: 350px;
+  --heightCardFront2: 225px;
+  --boxShadow: inset 20px 10px 90px rgba(0, 0, 0, 0.15),
+    0 10px 90px rgba(0, 0, 0, 0.3);
+  --buttonMarginTop: 50px;
+  --displayCountdown: flex;
+  --heightBody: 280vh;
+  --heightBody2: 200vh;
+}
+
+body {
+  font-family: "Garet";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: var(--heightBody);
+  background-image: url(../assets/images/mantiamen.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*Create the card container*/
+.weddingCard {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 4s;
+  box-shadow: var(--boxShadow);
+}
+
+/*Style the front of the card*/
+.cardFront {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url(../assets/images/graduatefon.jpg);
+  width: 600px;
+  height: var(--heightCardFront);
+  overflow: hidden;
+  transform-origin: top;
+  transform: var(--transformCardFront);
+  box-shadow: inset 20px 10px 90px rgba(0, 0, 0, 0.13),
+    20px 0 40px rgba(0, 0, 0, 0.1);
+  transition: 0.6s;
+  border-radius: 3px;
+}
+
+/*Style the inside part of the card*/
+.cardInside {
+  position: absolute;
+  background-image: url(../assets/images/graduatefon.jpg);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 600px;
+  height: 400px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 20px 5px 90px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.inside-text {
+  position: relative;
+  transform: scale(0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+p.verse {
+  position: relative;
+  top: 20px;
+  width: 490px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+  margin: auto;
+  position: relative;
+  top: 47px;
+  font-family: "LuxuriousScript", sans-serif;
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.textInvite {
+  margin: auto;
+  position: relative;
+  top: 40px;
+  font-size: 15px;
+}
+
+.dataHorario {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: 28px;
+}
+
+.dateInvite {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#dateweek {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+#dateHour {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.separador {
+  background-color: black;
+  width: 1px;
+  height: 45px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#s1 {
+  margin-right: 10px;
+}
+
+#s2 {
+  margin-left: 10px;
+}
+
+.dateMes {
+  font-size: 18px;
+  position: relative;
+  bottom: -10px;
+}
+
+.dateDia {
+  font-size: 40px;
+}
+
+.dateAno {
+  font-size: 18px;
+  position: relative;
+  top: -10px;
+}
+
+.place {
+  position: relative;
+  top: 10px;
+  font-size: 15px;
+}
+
+.button {
+  margin-top: var(--buttonMarginTop);
+}
+
+.click {
+  width: 100px;
+  margin: auto;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: rgba(227, 192, 246, 0.1);
+  backdrop-filter: blur(4px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.582);
+  cursor: pointer;
+  color: inherit; /* Это обеспечит, что текст будет наследовать цвет родителя */
+  font: inherit; /* Это обеспечит, что шрифт будет наследовать стиль родителя */
+  padding: 10px;
+  text-align: center;
+  outline: none;
+}
+
+.click:hover {
+  background: rgba(227, 192, 246, 0.2);
+}
+
+#button-links {
+  display: var(--displayCountdown);
+  position: relative;
+  top: 25px;
+  justify-content: center;
+  padding: 25px 0;
+  font-size: 15px;
+  gap: 35px;
+}
+
+#button-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+#button-links a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.img-back {
+  position: relative;
+}
+
+.imgBk {
+  width: 90px;
+  height: 90px;
+}
+
+.imgLinks {
+  position: absolute;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.582);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+#countdow-container {
+  display: var(--displayCountdown);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 1;
+  margin: 1rem 2rem;
+}
+
+h2 {
+  display: var(--displayCountdown);
+  text-align: center;
+  justify-content: center;
+  font-family: "Garet";
+}
+
+.container {
+  position: relative;
+  flex-direction: column;
+  top: 100px;
+  background-image: url(../assets/images/countdow-img.jpg);
+  backdrop-filter: blur(10px);
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 700px;
+  height: 230px;
+  display: var(--displayCountdown);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.325);
+}
+
+.countdow {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: solid 1px rgba(0, 0, 0, 0.11);
+  border-radius: 8px;
+  margin: 0 8px 0 8px;
+}
+
+.countdow span {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.mapsContainer {
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.325);
+  position: relative;
+  top: 185px;
+  display: var(--displayCountdown);
+  flex-direction: column;
+  justify-content: center;
+  width: 680px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.address {
+  margin: 3px 10px 10px 15px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.buttonCopy {
+  position: relative;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  background: transparent url(../assets/images/icons8-copiar-48.png) no-repeat
+    center;
+  background-size: 95%;
+  border: none;
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+.mapBox {
+  position: relative;
+  width: 95%;
+  height: 350px;
+  margin: 0 auto;
+  background: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.mapBox iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+#textocopy {
+  font-family: "Garet";
+}
+
+@media screen and (min-width: 300px) and (max-width: 720px) {
+  body {
+    height: var(--heightBody2);
+    background-image: url(../assets/images/obshi.jpeg);
+  }
+
+  .weddingCard {
+    width: 360px;
+    height: 232px;
+  }
+
+  .cardFront {
+    width: 360px;
+    height: var(--heightCardFront2);
+    background-size: 100% 100%;
+  }
+
+  .cardInside {
+    width: 360px;
+    height: 232px;
+    background-size: 100% 100%;
+  }
+
+  p.verse {
+    width: 240px;
+    top: 15px;
+    font-size: 10px;
+  }
+
+  h1 {
+    top: 22px;
+    font-size: 45px;
+  }
+
+  .textInvite {
+    width: 320px;
+    top: 25px;
+    font-size: 9.2px;
+    text-align: center;
+  }
+
+  .dataHorario {
+    top: 15px;
+  }
+
+  #dateweek {
+    margin-right: 12px;
+    font-size: 0.6rem;
+  }
+
+  #dateHour {
+    margin-left: 12px;
+    font-size: 0.6rem;
+  }
+
+  .separador {
+    height: 27px;
+  }
+
+  #s1 {
+    margin-right: 8px;
+  }
+
+  #s2 {
+    margin-left: 8px;
+  }
+
+  .dateMes {
+    font-size: 0.75rem;
+    bottom: -6px;
+  }
+
+  .dateDia {
+    font-size: 1.5rem;
+  }
+
+  .dateAno {
+    font-size: 0.75rem;
+    top: -5px;
+  }
+
+  .place {
+    top: 8px;
+    font-size: 0.57rem;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    line-height: 0.4;
+    margin: 0.8rem 1.7rem;
+  }
+
+  #button-links {
+    gap: 15px;
+  }
+
+  .container {
+    height: 122px;
+    width: 360px;
+    top: 55px;
+    background-size: 100% 100%;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .countdow span {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  #countdow-container {
+    margin: auto 0;
+    position: relative;
+    top: -8px;
+  }
+
+  .countdow {
+    margin: 0 4px 0 4px;
+  }
+
+  .address {
+    font-size: 9px;
+  }
+
+  .h3 {
+    width: 80%;
+  }
+
+  .buttonCopy {
+    top: 5px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .mapsContainer {
+    top: 115px;
+    width: 360px;
+  }
+
+  .mapBox {
+    width: 95%;
+    height: 290px;
+  }
+}

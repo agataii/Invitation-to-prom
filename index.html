@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <title>Бітіру кешіне шақыру</title>
+  </head>
+  <body>
+    <div class="weddingCard">
+      <div class="cardFront">
+        <div class="inside-text">
+          <p class="verse">
+            <em>Шақырту</em>
+          </p>
+          <h1>Graduate party</h1>
+          <p class="textInvite">BA&IT (2020-2024)</p>
+        </div>
+      </div>
+      <div class="cardInside">
+        <div class="inside-text">
+          <p class="verse">“<em>Халал жерге барайық.</em>” - P.s: Орынгүл</p>
+          <h1>Qurmetti grýppalastar</h1>
+          <p class="textInvite">
+            Сіздерді өзіміздің “Graduate party” атты кешіміздің қонағы болуға
+            шақырамыз. Бұл маңызды кеште керемет көңіл күймен келу ғана
+            сұралады. Көріскенше! Сіздерді асыға күтеміз❤️
+          </p>
+        </div>
+        <div class="dataHorario">
+          <div id="dateweek">
+            <p>WED</p>
+          </div>
+          <div class="separador" id="s1"></div>
+          <div class="dateInvite">
+            <div class="dateMes">June</div>
+            <div class="dateDia">26</div>
+            <div class="dateAno">2024</div>
+          </div>
+          <div class="separador" id="s2"></div>
+          <div id="dateHour">
+            <p>18:00</p>
+          </div>
+        </div>
+        <div class="place">
+          <p>Мекен-жайы: Қазанғап 2В үй</p>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <button id="botao" class="click" onclick="toogleMode()">Ашу</button>
+    </div>
+    <div id="button-links">
+      <div class="img-back">
+        <a href="#maps">
+          <img class="imgBk" src="./assets/images/2-removebk.png" alt="texto" />
+          <img
+            class="imgLinks"
+            src="./assets/images/icone-local.png"
+            alt="ícone de localização"
+          />
+        </a>
+      </div>
+      <div class="img-back">
+        <a
+          href="https://chat.whatsapp.com/DUnudgosMF4F32vOMoxvhr"
+          target="_blank"
+        >
+          <img class="imgBk" src="./assets/images/1-removebk.png" alt="texto" />
+          <img
+            class="imgLinks"
+            src="./assets/images/icone-whats.png"
+            alt="ícone do whatsapp"
+        /></a>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Бұл тамаша күнге аз уақыт қалды...</h2>
+      <section id="countdow-container">
+        <div class="countdow days-c">
+          <p class="text" id="days">0</p>
+          <span>Күн</span>
+        </div>
+        <div class="countdow hours-c">
+          <p class="text" id="hours">0</p>
+          <span>Сағат</span>
+        </div>
+        <div class="countdow min-c">
+          <p class="text" id="min">0</p>
+          <span>Минут</span>
+        </div>
+        <div class="countdow secs-c">
+          <p class="text" id="secs">0</p>
+          <span>Секунд</span>
+        </div>
+      </section>
+    </div>
+    <div class="mapsContainer">
+      <div class="address">
+        <h3 id="textocopy">Старый аэропорт проезд Казангап дом 2В</h3>
+        <button
+          class="buttonCopy"
+          onclick="copiarTexto()"
+          title="Copiar"
+        ></button>
+      </div>
+      <div id="maps" class="mapBox">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2715.1673979263674!2d51.89004137636534!3d47.11539077114893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDfCsDA2JzU1LjQiTiA1McKwNTMnMzMuNCJF!5e0!3m2!1sru!2skz!4v1718985655775!5m2!1sru!2skz"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
